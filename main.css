@@ -1,0 +1,39 @@
+html {
+    width: 100%;
+    background: url(./bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    max-width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+#clock {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 420px;
+    color: white;
+    text-shadow: 2px 4px 6px rgba(0,0,0,0.3);
+    margin-top: -256px;
+    top: 45%;
+    width: 100%;
+    position: absolute;
+}
+#clock span {
+    font-size: 45%;
+}
+#credits {
+    position: fixed;
+    bottom: 10px;
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+}
