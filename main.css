@@ -18,19 +18,78 @@ body {
 
 #clock {
     font-family: 'Montserrat', sans-serif;
-    font-size: 380px;
+    font-size: 320px;
     color: white;
-    text-shadow: 2px 4px 6px rgba(0,0,0,0.3);
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
     margin-top: -50px;
+    text-align: left;
+    padding-left: 50px;
 }
+
 #clock span {
     font-size: 45%;
 }
+
 #credits {
     position: fixed;
     bottom: 10px;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
     width: 100%;
     text-align: center;
+}
+
+#buses {
+    width: 50%;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+}
+
+#west,
+#east {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+}
+
+#east {
+    border-left: 2px solid rgba(255, 255, 255, 0.6);
+    padding-left: 20px;
+}
+
+.arrival {
+    height: 80px;
+    font-size: 40px;
+    color: white;
+    text-align: left;
+}
+
+.arrival div {
+    padding: 6px 12px;
+    border-radius: 12px;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.arrival:nth-child(2) {
+    opacity: .95;
+}
+
+.arrival:nth-child(3) {
+    opacity: .85;
+}
+
+.arrival:nth-child(4) {
+    opacity: .5;
+}
+
+.title {
+    padding: 4px 8px;
+    border-radius: 8px;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #777;
+    margin-bottom: 20px;
+    font-size: 26px;
 }

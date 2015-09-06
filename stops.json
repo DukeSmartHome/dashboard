@@ -1,0 +1,1598 @@
+{
+    "rate_limit": 1,
+    "expires_in": 300,
+    "api_latest_version": "1.2",
+    "generated_on": "2015-09-06T21:57:51+00:00",
+    "data": [{
+        "code": "5956",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["12", "24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 35.90506,
+            "lng": -78.94646
+        },
+        "stop_id": "4052494",
+        "routes": [],
+        "name": "Southpoint Mall at Movie Theater"
+    }, {
+        "code": "1105",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["12", "24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00832,
+            "lng": -78.93777
+        },
+        "stop_id": "4098134",
+        "routes": ["4003722"],
+        "name": "Erwin Rd at VA Hospital"
+    }, {
+        "code": "12001",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 35.9939,
+            "lng": -78.9433
+        },
+        "stop_id": "4098142",
+        "routes": ["4003714"],
+        "name": "Bassett Dr at Grounds Lot (12001)"
+    }, {
+        "code": "12009",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00026,
+            "lng": -78.92675
+        },
+        "stop_id": "4098170",
+        "routes": ["4005486", "4006684", "4007024", "4007026", "4007028", "4007030", "4007032"],
+        "name": "Nasher  Westbound"
+    }, {
+        "code": "12010",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00016,
+            "lng": -78.92673
+        },
+        "stop_id": "4098174",
+        "routes": ["4005486", "4006684", "4007024", "4007026", "4007028", "4007030", "4007032"],
+        "name": "Nasher Eastbound"
+    }, {
+        "code": "12015",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 35.999,
+            "lng": -78.93336
+        },
+        "stop_id": "4098178",
+        "routes": ["4005486", "4006684", "4007022", "4007024", "4007026", "4007028", "4007030"],
+        "name": "Campus Drive At Chapel Circle Eastbound"
+    }, {
+        "code": "12016",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 35.99907,
+            "lng": -78.93367
+        },
+        "stop_id": "4098182",
+        "routes": ["4003722", "4006684", "4007022", "4007024", "4007026", "4007028"],
+        "name": "Admissions Westbound"
+    }, {
+        "code": "12019",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 35.99784,
+            "lng": -78.9333
+        },
+        "stop_id": "4098190",
+        "routes": ["4005486", "4007028", "4007030"],
+        "name": "Duke News/Alumni House"
+    }, {
+        "code": "12023",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 35.99937,
+            "lng": -78.94481
+        },
+        "stop_id": "4098194",
+        "routes": ["4003714", "4007028"],
+        "name": "Science Dr at Duke Law School"
+    }, {
+        "code": "12024",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 35.99931,
+            "lng": -78.94469
+        },
+        "stop_id": "4098198",
+        "routes": ["4003714", "4007028"],
+        "name": "PPS/Science Dr"
+    }, {
+        "code": "12026",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00677,
+            "lng": -78.94133
+        },
+        "stop_id": "4098206",
+        "routes": ["4003726"],
+        "name": "GSRB Northbound"
+    }, {
+        "code": "12027",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00285,
+            "lng": -78.94191
+        },
+        "stop_id": "4098210",
+        "routes": ["4003714", "4007028"],
+        "name": "Science Drive Circle (12027)"
+    }, {
+        "code": "12029",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00415,
+            "lng": -78.93949
+        },
+        "stop_id": "4098214",
+        "routes": ["4003714", "4003726", "4003734"],
+        "name": "Hudson Hall"
+    }, {
+        "code": "12030",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00381,
+            "lng": -78.93749
+        },
+        "stop_id": "4098218",
+        "routes": ["4003714", "4003726", "4003734"],
+        "name": "Research Dr at Duke Clinic (12030)"
+    }, {
+        "code": "12034",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00605,
+            "lng": -78.93485
+        },
+        "stop_id": "4098222",
+        "routes": ["4003718", "4003722"],
+        "name": "Trent Dr/School of Nursing Southbound"
+    }, {
+        "code": "12037",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00687,
+            "lng": -78.93303
+        },
+        "stop_id": "4098226",
+        "routes": ["4005486", "4007032"],
+        "name": "Flowers Drive Southbound"
+    }, {
+        "code": "12038",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00684,
+            "lng": -78.93288
+        },
+        "stop_id": "4098230",
+        "routes": ["4005486", "4007022"],
+        "name": "Flowers Drive Northbound"
+    }, {
+        "code": "12044",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.01124,
+            "lng": -78.93495
+        },
+        "stop_id": "4098246",
+        "routes": ["4003718"],
+        "name": "Parking Garage III (12044)"
+    }, {
+        "code": "12046",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00548,
+            "lng": -78.94035
+        },
+        "stop_id": "4098254",
+        "routes": ["4003714", "4003726", "4003734"],
+        "name": "Nanaline Duke Building"
+    }, {
+        "code": "12047",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00519,
+            "lng": -78.94405
+        },
+        "stop_id": "4098258",
+        "routes": ["4003714", "4003734"],
+        "name": "Circuit Lot Westbound (12047)"
+    }, {
+        "code": "12048",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00516,
+            "lng": -78.94376
+        },
+        "stop_id": "4098262",
+        "routes": ["4003714"],
+        "name": "Circuit Lot Eastbound (12048)"
+    }, {
+        "code": "12049",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00529,
+            "lng": -78.93104
+        },
+        "stop_id": "4098266",
+        "routes": ["4003718", "4007022"],
+        "name": "H Lot Westbound (12049)"
+    }, {
+        "code": "12050",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00517,
+            "lng": -78.93022
+        },
+        "stop_id": "4098270",
+        "routes": ["4003718", "4007032"],
+        "name": "Anderson/Yearby"
+    }, {
+        "code": "12051",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00414,
+            "lng": -78.92983
+        },
+        "stop_id": "4098274",
+        "routes": ["4005486", "4007022", "4007030"],
+        "name": "Anderson St at Mill Village (12051)"
+    }, {
+        "code": "12052",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00426,
+            "lng": -78.93012
+        },
+        "stop_id": "4098278",
+        "routes": ["4003722", "4005486", "4007030", "4007032"],
+        "name": "Anderson St at Lewis St (12052)"
+    }, {
+        "code": "12053",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00185,
+            "lng": -78.92715
+        },
+        "stop_id": "4098282",
+        "routes": ["4005486", "4007022", "4007030"],
+        "name": "Ronald Mcdonald House Eastbound"
+    }, {
+        "code": "12054",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00207,
+            "lng": -78.92684
+        },
+        "stop_id": "4098286",
+        "routes": ["4005486", "4007030", "4007032"],
+        "name": "Episcopal Center"
+    }, {
+        "code": "12055",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00759,
+            "lng": -78.92565
+        },
+        "stop_id": "4098290",
+        "routes": ["4003722"],
+        "name": "Erwin Square (12055)"
+    }, {
+        "code": "12056",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00453,
+            "lng": -78.92656
+        },
+        "stop_id": "4098294",
+        "routes": ["4005486", "4007022", "4007030"],
+        "name": "Alexander Ave at Pace St Eastbound (12056)"
+    }, {
+        "code": "12057",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00462,
+            "lng": -78.92635
+        },
+        "stop_id": "4098298",
+        "routes": ["4005486", "4007030", "4007032"],
+        "name": "Alexander Ave at Pace St Westbound (12057)"
+    }, {
+        "code": "12060",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 35.99813,
+            "lng": -78.94551
+        },
+        "stop_id": "4098302",
+        "routes": ["4003714", "4007028"],
+        "name": "Fuqua School/Northbound"
+    }, {
+        "code": "12064",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00697,
+            "lng": -78.92345
+        },
+        "stop_id": "4098310",
+        "routes": ["4003722"],
+        "name": "Erwin Mill (12064)"
+    }, {
+        "code": "12066",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00758,
+            "lng": -78.92021
+        },
+        "stop_id": "4098314",
+        "routes": ["4003722"],
+        "name": "705 Broad Street (12066)"
+    }, {
+        "code": "12067",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00181,
+            "lng": -78.94711
+        },
+        "stop_id": "4098318",
+        "routes": ["4003734"],
+        "name": "Circuit Dr at Towerview Rd (12067)"
+    }, {
+        "code": "12068",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00876,
+            "lng": -78.95458
+        },
+        "stop_id": "4098322",
+        "routes": ["4003734"],
+        "name": "Morreene Rd at Campus Walk Ave (12068)"
+    }, {
+        "code": "12070",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00396,
+            "lng": -78.95416
+        },
+        "stop_id": "4098326",
+        "routes": ["4003722"],
+        "name": "Dialysis"
+    }, {
+        "code": "12073",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00025,
+            "lng": -78.9564
+        },
+        "stop_id": "4098334",
+        "routes": ["4003722"],
+        "name": "Center For Living (12073)"
+    }, {
+        "code": "12075",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00947,
+            "lng": -78.94153
+        },
+        "stop_id": "4098338",
+        "routes": ["4003722"],
+        "name": "Hock Plaza (12075)"
+    }, {
+        "code": "12081",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00519,
+            "lng": -78.93332
+        },
+        "stop_id": "4098342",
+        "routes": ["4003718", "4007032"],
+        "name": "GC/DN Eastbound"
+    }, {
+        "code": "12082",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00538,
+            "lng": -78.93323
+        },
+        "stop_id": "4098346",
+        "routes": ["4003718", "4007022"],
+        "name": "GC/DN Westbound"
+    }, {
+        "code": "12086",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00023,
+            "lng": -78.93011
+        },
+        "stop_id": "4098358",
+        "routes": ["4005486", "4007022", "4007030"],
+        "name": "Anderson St at Campus Dr"
+    }, {
+        "code": "12087",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00066,
+            "lng": -78.93034
+        },
+        "stop_id": "4098362",
+        "routes": ["4003722", "4005486", "4007030", "4007032"],
+        "name": "Anderson / Campus Drive Lot"
+    }, {
+        "code": "12092",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00392,
+            "lng": -78.94554
+        },
+        "stop_id": "4098366",
+        "routes": ["4003714", "4003734"],
+        "name": "Circuit Drive at Circuit Lot Extension"
+    }, {
+        "code": "12093",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00436,
+            "lng": -78.94468
+        },
+        "stop_id": "4098370",
+        "routes": ["4003714", "4003722"],
+        "name": "Circuit Drive at F.E.L. Labs Building"
+    }, {
+        "code": "12096",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.01021,
+            "lng": -78.92861
+        },
+        "stop_id": "4098374",
+        "routes": ["4003718"],
+        "name": "Hillsborough Rd at 15th St (12096)"
+    }, {
+        "code": "12102",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00665,
+            "lng": -78.9452
+        },
+        "stop_id": "4098378",
+        "routes": ["4003726", "4003734"],
+        "name": "LaSalle St at Circuit Lot (12102)"
+    }, {
+        "code": "12103",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00576,
+            "lng": -78.94147
+        },
+        "stop_id": "4098382",
+        "routes": ["4003714", "4003726", "4003734"],
+        "name": "Circuit Dr at North Building (12103)"
+    }, {
+        "code": "12107",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.0097,
+            "lng": -78.95351
+        },
+        "stop_id": "4098386",
+        "routes": ["4003734"],
+        "name": "Millenium Campus Walk East"
+    }, {
+        "code": "12109",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00968,
+            "lng": -78.94918
+        },
+        "stop_id": "4098390",
+        "routes": ["4003734"],
+        "name": "Campus Walk Ave at LaSalle St (12109)"
+    }, {
+        "code": "12110",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00989,
+            "lng": -78.94869
+        },
+        "stop_id": "4098394",
+        "routes": ["4003734"],
+        "name": "Campus Walk/LaSalle South"
+    }, {
+        "code": "12112",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.01353,
+            "lng": -78.94833
+        },
+        "stop_id": "4098402",
+        "routes": ["4003734"],
+        "name": "Blue Crest/LaSalle South"
+    }, {
+        "code": "12113",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.02102,
+            "lng": -78.94556
+        },
+        "stop_id": "4098406",
+        "routes": ["4003726", "4003734"],
+        "name": "Best Products Lot (12113)"
+    }, {
+        "code": "12116",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00045,
+            "lng": -78.92753
+        },
+        "stop_id": "4098414",
+        "routes": ["4005486", "4007022", "4007030"],
+        "name": "Alexander/Campus Eastbound"
+    }, {
+        "code": "12123",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00185,
+            "lng": -78.94258
+        },
+        "stop_id": "4098426",
+        "routes": ["4003714", "4007028"],
+        "name": "Science Drive at Bryan Center Garage"
+    }, {
+        "code": "12124",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00065,
+            "lng": -78.94522
+        },
+        "stop_id": "4098430",
+        "routes": ["4003714"],
+        "name": "Gross Chem / Towerview"
+    }, {
+        "code": "5074",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.0097,
+            "lng": -78.95042
+        },
+        "stop_id": "4098450",
+        "routes": ["4003734"],
+        "name": "Holly Ridge/Campus Walk East"
+    }, {
+        "code": "5078",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["12", "24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00478,
+            "lng": -78.93494
+        },
+        "stop_id": "4098454",
+        "routes": ["4003718", "4003722"],
+        "name": "Trent Dr at Duke Hospital South"
+    }, {
+        "code": "5106",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00873,
+            "lng": -78.94217
+        },
+        "stop_id": "4098466",
+        "routes": ["4003722"],
+        "name": "Erwin Rd at Research Dr"
+    }, {
+        "code": "5157",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.01078,
+            "lng": -78.93707
+        },
+        "stop_id": "4098482",
+        "routes": ["4003726"],
+        "name": "Fulton St at Pratt St"
+    }, {
+        "code": "5207",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.01418,
+            "lng": -78.94784
+        },
+        "stop_id": "4098490",
+        "routes": ["4003734"],
+        "name": "Lasalle St at Grace Healthcare"
+    }, {
+        "code": "5351",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00841,
+            "lng": -78.94768
+        },
+        "stop_id": "4098530",
+        "routes": ["4003726", "4003734"],
+        "name": "Lasalle St at Bradford Ridge Apts"
+    }, {
+        "code": "5471",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00475,
+            "lng": -78.94954
+        },
+        "stop_id": "4098554",
+        "routes": ["4003722"],
+        "name": "Erwin Rd at Lenox Baker Children's"
+    }, {
+        "code": "5564",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00381,
+            "lng": -78.9527
+        },
+        "stop_id": "4098586",
+        "routes": ["4003734"],
+        "name": "Morreene Rd at Erwin Rd"
+    }, {
+        "code": "5714",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00718,
+            "lng": -78.9546
+        },
+        "stop_id": "4098622",
+        "routes": ["4003734"],
+        "name": "Morreene Rd at Sherwood Dr"
+    }, {
+        "code": "5743",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["12", "24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00458,
+            "lng": -78.93499
+        },
+        "stop_id": "4098650",
+        "routes": ["4003718", "4003722"],
+        "name": "Trent Dr at Duke Hospital South"
+    }, {
+        "code": "5770",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.01772,
+            "lng": -78.94562
+        },
+        "stop_id": "4098658",
+        "routes": ["4003734"],
+        "name": "Lasalle St at Tire King"
+    }, {
+        "code": "5786",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.018,
+            "lng": -78.9455
+        },
+        "stop_id": "4098670",
+        "routes": ["4003734"],
+        "name": "Lasalle St at Hillsborough Rd"
+    }, {
+        "code": "5848",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.0012,
+            "lng": -78.93631
+        },
+        "stop_id": "4098682",
+        "routes": ["4003722"],
+        "name": "Flowers Dr at Duke Garden (out)"
+    }, {
+        "code": "6012",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["12", "24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00814,
+            "lng": -78.93783
+        },
+        "stop_id": "4098738",
+        "routes": ["4003722"],
+        "name": "Erwin Rd at Duke Hospital"
+    }, {
+        "code": "6024",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.01528,
+            "lng": -78.94693
+        },
+        "stop_id": "4098750",
+        "routes": ["4003734"],
+        "name": "Lasalle St at Duke Manor"
+    }, {
+        "code": "6104",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["12", "24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00898,
+            "lng": -78.93714
+        },
+        "stop_id": "4098786",
+        "routes": ["4003718", "4003726"],
+        "name": "Fulton St at VA Hospital"
+    }, {
+        "code": "6169",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.01508,
+            "lng": -78.94688
+        },
+        "stop_id": "4098790",
+        "routes": ["4003734"],
+        "name": "Lasalle St at Duke Manor Apt"
+    }, {
+        "code": "6184",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00079,
+            "lng": -78.94587
+        },
+        "stop_id": "4098794",
+        "routes": ["4003714"],
+        "name": "Law / Towerview"
+    }, {
+        "code": "6185",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 35.99837,
+            "lng": -78.94554
+        },
+        "stop_id": "4098798",
+        "routes": ["4003714", "4007028"],
+        "name": "Fuqua School/Southbound"
+    }, {
+        "code": "6186",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 35.99572,
+            "lng": -78.94661
+        },
+        "stop_id": "4098802",
+        "routes": ["4003714", "4007028"],
+        "name": "R. David Thomas Center"
+    }, {
+        "code": "6286",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["12", "24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 35.99889,
+            "lng": -78.93382
+        },
+        "stop_id": "4098806",
+        "routes": [],
+        "name": "Chapel at Duke University (PM)"
+    }, {
+        "code": "6499",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00735,
+            "lng": -78.93426
+        },
+        "stop_id": "4098862",
+        "routes": ["4003718", "4003722"],
+        "name": "Trent Dr at Erwin Rd"
+    }, {
+        "code": "12095",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00603,
+            "lng": -78.94065
+        },
+        "stop_id": "4110174",
+        "routes": ["4003734"],
+        "name": "Sands Bld"
+    }, {
+        "code": "13003",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.01052,
+            "lng": -78.92408
+        },
+        "stop_id": "4112614",
+        "routes": ["4003718"],
+        "name": "Hillsborough Rd at 9th St (13003)"
+    }, {
+        "code": "13004",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00637,
+            "lng": -78.93452
+        },
+        "stop_id": "4112618",
+        "routes": ["4003718", "4003722"],
+        "name": "Trent Drive Northbound/SON"
+    }, {
+        "code": "12003",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00598,
+            "lng": -78.91472
+        },
+        "stop_id": "4117202",
+        "routes": ["4005486", "4006684", "4007026", "4007028", "4007030", "4007032"],
+        "name": "East Campus Quad (12003)"
+    }, {
+        "code": "12105",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00537,
+            "lng": -78.93632
+        },
+        "stop_id": "4128254",
+        "routes": ["4003718"],
+        "name": "DMP/Cancer Ctr"
+    }, {
+        "code": "12088",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.01011,
+            "lng": -78.92754
+        },
+        "stop_id": "4128486",
+        "routes": ["4003718"],
+        "name": "Rutherford / Hillsborough"
+    }, {
+        "code": "12106",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.01219,
+            "lng": -78.94836
+        },
+        "stop_id": "4129902",
+        "routes": ["4003734"],
+        "name": "The Heights at LaSalle"
+    }, {
+        "code": "12042",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["24", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00797,
+            "lng": -78.94229
+        },
+        "stop_id": "4136130",
+        "routes": ["4003722", "4003726"],
+        "name": "Research Dr at Erwin Rd"
+    }, {
+        "code": "12018",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["12", "176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00096,
+            "lng": -78.93826
+        },
+        "stop_id": "4146366",
+        "routes": ["4005486", "4006684", "4007022", "4007024", "4007026", "4007030"],
+        "name": "Duke Chapel"
+    }, {
+        "code": "12008",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 35.99997,
+            "lng": -78.92355
+        },
+        "stop_id": "4151494",
+        "routes": ["4005486", "4006684", "4007024", "4007026", "4007028", "4007030", "4007032"],
+        "name": "Swift Ave at Campus Dr Eastbound (12008)"
+    }, {
+        "code": "12059",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00268,
+            "lng": -78.92135
+        },
+        "stop_id": "4153094",
+        "routes": ["4005486", "4007028", "4007030", "4007032"],
+        "name": "Swift Avenue Eastbound"
+    }, {
+        "code": "12007",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00001,
+            "lng": -78.92321
+        },
+        "stop_id": "4157330",
+        "routes": ["4005486", "4006684", "4007024", "4007026", "4007030", "4007032"],
+        "name": "Swift/Campus Westbound"
+    }, {
+        "code": "12002",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00502,
+            "lng": -78.91607
+        },
+        "stop_id": "4158202",
+        "routes": ["4006684", "4007026", "4007032"],
+        "name": "Gilbert-Addoms Westbound (12002)"
+    }, {
+        "code": "12005",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00103,
+            "lng": -78.91894
+        },
+        "stop_id": "4158210",
+        "routes": ["4005486", "4006684", "4007024", "4007026", "4007030", "4007032"],
+        "name": "Laundry Westbound"
+    }, {
+        "code": "12071",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00171,
+            "lng": -78.91481
+        },
+        "stop_id": "4158230",
+        "routes": ["4007024"],
+        "name": "Smith Warehouse Westbound (12071)"
+    }, {
+        "code": "12072",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00269,
+            "lng": -78.91767
+        },
+        "stop_id": "4158234",
+        "routes": ["4005486", "4006684", "4007024", "4007026", "4007030", "4007032"],
+        "name": "Campus / Maxwell Westbound"
+    }, {
+        "code": "12114",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00763,
+            "lng": -78.9375
+        },
+        "stop_id": "4158254",
+        "routes": ["4003718"],
+        "name": "Duke Hospital"
+    }, {
+        "code": "13005",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00202,
+            "lng": -78.94901
+        },
+        "stop_id": "4158262",
+        "routes": ["4003722"],
+        "name": "Towerview at Circuit Dr"
+    }, {
+        "code": "13006",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 35.96666,
+            "lng": -78.96036
+        },
+        "stop_id": "4173276",
+        "routes": [],
+        "name": "South Square"
+    }, {
+        "code": "13008",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00096,
+            "lng": -78.92264
+        },
+        "stop_id": "4173498",
+        "routes": ["4005486", "4007028", "4007030", "4007032"],
+        "name": "Swift Ave at Faber St"
+    }, {
+        "code": "12101",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00843,
+            "lng": -78.9279
+        },
+        "stop_id": "4174454",
+        "routes": ["4003718"],
+        "name": "Rutherford / Main"
+    }, {
+        "code": "12004",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00284,
+            "lng": -78.91743
+        },
+        "stop_id": "4177624",
+        "routes": ["4006684", "4007024", "4007026"],
+        "name": "Campus / Maxwell Eastbound"
+    }, {
+        "code": "12006",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00086,
+            "lng": -78.9188
+        },
+        "stop_id": "4177626",
+        "routes": ["4006684", "4007024", "4007026"],
+        "name": "Laundry Eastbound"
+    }, {
+        "code": "12011",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00007,
+            "lng": -78.92998
+        },
+        "stop_id": "4177628",
+        "routes": ["4006684", "4007022", "4007024", "4007026", "4007028"],
+        "name": "Campus/Anderson Westbound"
+    }, {
+        "code": "12012",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00002,
+            "lng": -78.93038
+        },
+        "stop_id": "4177630",
+        "routes": ["4006684", "4007024", "4007026", "4007028"],
+        "name": "Campus/Anderson Eastbound"
+    }, {
+        "code": "12077",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00153,
+            "lng": -78.91489
+        },
+        "stop_id": "4177632",
+        "routes": ["4007024"],
+        "name": "Smith Warehouse Eastbound (12077)"
+    }, {
+        "code": "12118",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 35.99767,
+            "lng": -78.93341
+        },
+        "stop_id": "4177634",
+        "routes": ["4007028"],
+        "name": "Chapel Drive at Duke University Rd/Alumni House"
+    }, {
+        "code": "12130",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00521,
+            "lng": -78.91475
+        },
+        "stop_id": "4177636",
+        "routes": ["4007024"],
+        "name": "East Campus Statue (12130)"
+    }, {
+        "code": "13009",
+        "description": "",
+        "url": "",
+        "parent_station_id": null,
+        "agency_ids": ["176"],
+        "station_id": null,
+        "location_type": "stop",
+        "location": {
+            "lat": 36.00257,
+            "lng": -78.92163
+        },
+        "stop_id": "4177638",
+        "routes": ["4007028"],
+        "name": "Swift Ave at 300 Swift"
+    }],
+    "api_version": "1.2"
+}
