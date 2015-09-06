@@ -18,13 +18,10 @@ body {
 
 #clock {
     font-family: 'Montserrat', sans-serif;
-    font-size: 420px;
+    font-size: 380px;
     color: white;
     text-shadow: 2px 4px 6px rgba(0,0,0,0.3);
-    margin-top: -256px;
-    top: 45%;
-    width: 100%;
-    position: absolute;
+    margin-top: -50px;
 }
 #clock span {
     font-size: 45%;
