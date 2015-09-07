@@ -76,8 +76,6 @@ $(function () {
     function updateBusDisplay(routes) {
         var $west = $('#west .arrivals');
         var $east = $('#east .arrivals');
-        $west.fadeOut(0);
-        $east.fadeOut(0);
         $west.empty();
         $east.empty();
         for (var i = 0; i < 2; ++i) {
@@ -95,15 +93,12 @@ $(function () {
                     var deltaHTML = delta + ' min';
 
                 if (i == 0)
-                    var html = '<div class="arrival">' + deltaHTML + ' till <div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div></div>';
+                    var html = '<div class="arrival fadeInUp animated ">' + deltaHTML + ' till <div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div></div>';
                 else
-                    var html = '<div class="arrival"><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div> in ' + deltaHTML + '</div>';
-                console.log(html);
+                    var html = '<div class="arrival fadeInUp animated "><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div> in ' + deltaHTML + '</div>';
                 whichWay.append(html);
             }
         }
-        $west.fadeIn(650);
-        $east.fadeIn(650);
     }
 
     function getWeather() {
@@ -115,7 +110,7 @@ $(function () {
                 /* html = '<ul><li class="currently">' + weather.currently + '</li>';
                  html += '<li>' + weather.wind.direction + ' ' + weather.wind.speed + ' ' + weather.units.speed + '</li></ul>';*/
                 html = '<h2><i class="icon-' + weather.code + '"></i> ' + weather.temp + '&deg;' + weather.units.temp + '</h2>';
-                html += '<div><span id="currently">' + weather.currently + '</span> | wind from ' + weather.wind.direction + ' at ' + weather.wind.speed + ' ' + weather.units.speed + '</div>'
+                html += '<div><span id="currently">' + weather.currently + '</span>  |  wind from ' + weather.wind.direction + ' at ' + weather.wind.speed + ' ' + weather.units.speed + '</div>'
                 $("#weather").html(html);
             },
             error: function (error) {
