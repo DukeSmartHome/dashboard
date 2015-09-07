@@ -85,10 +85,14 @@ $(function () {
                 var busName = names[routes.data[i].arrivals[j].route_id];
                 var busColor = colors[routes.data[i].arrivals[j].route_id];
                 var delta = Math.round((Math.abs(new Date(arrivalTime) - new Date())) / 60000);
-                
-                var html = '<div class="arrival"><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div> in ' + delta + ' min</div>';
-console.log(html);
-               whichWay.append(html);
+                if (delta <= 5)
+                    var deltaHTML = '<div class="important">' + delta + ' min<div/>';
+                else
+                    var deltaHTML = delta + ' min';
+
+                var html = '<div class="arrival"><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div> in ' + deltaHTML + '</div>';
+                console.log(html);
+                whichWay.append(html);
             }
         }
         $west.fadeIn(650);
@@ -104,7 +108,7 @@ console.log(html);
                 /* html = '<ul><li class="currently">' + weather.currently + '</li>';
                  html += '<li>' + weather.wind.direction + ' ' + weather.wind.speed + ' ' + weather.units.speed + '</li></ul>';*/
                 html = '<h2><i class="icon-' + weather.code + '"></i> ' + weather.temp + '&deg;' + weather.units.temp + '</h2>';
-                html += '<div>Conditions are <span id="currently">' + weather.currently + '</span>, wind from ' + weather.wind.direction + ' at ' + weather.wind.speed + ' ' + weather.units.speed + '.</div>'
+                html += '<div><span id="currently">' + weather.currently + '</span> | wind from ' + weather.wind.direction + ' at ' + weather.wind.speed + ' ' + weather.units.speed + '</div>'
                 $("#weather").html(html);
             },
             error: function (error) {
