@@ -42,18 +42,22 @@ $(function () {
         "4006684": "C1",
         "4007026": "C1",
         "4005486": "CCX",
-        "4007030": "CCX"
+        "4007030": "CCX",
+        "4007024": "CSW",
+        "4007028": "C3"
     }
     var colors = {
         "4006684": "rgba(226,0,15,",
         "4007026": "rgba(226,0,15,",
         "4005486": "rgba(249,177,32,",
-        "4007030": "rgba(186,224,83,"
+        "4007030": "rgba(186,224,83,",
+        "4007024": "rgba(0,98,155,",
+        "4007028": "rgba(1,130,132,"
     }
 
     function getBuses() {
         var output = $.ajax({
-            url: "https://transloc-api-1-2.p.mashape.com/arrival-estimates.json?agencies=176&callback=call&routes=4006684%2C4007026%2C4005486%2C4007030&stops=4157330%2C4151494%2C4173498",
+            url: "https://transloc-api-1-2.p.mashape.com/arrival-estimates.json?agencies=176&callback=call&routes=4006684%2C4007024%2C4007028%2C4007026%2C4005486%2C4007030&stops=4157330%2C4151494%2C4173498",
             type: 'GET',
             data: {},
             dataType: 'json',
