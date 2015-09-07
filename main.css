@@ -40,10 +40,9 @@ body {
 }
 
 #buses {
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
-    text-align: left;
 }
 
 #west,
@@ -53,16 +52,42 @@ body {
     box-sizing: border-box;
 }
 
+#west {
+    text-align: right;
+    padding-right: 20px;
+}
+
 #east {
+    text-align: left;
     border-left: 2px solid rgba(255, 255, 255, 0.6);
     padding-left: 20px;
 }
 
 .arrival {
-    height: 80px;
-    font-size: 40px;
+    height: 110px;
+    font-size: 80px;
     color: white;
-    text-align: left;
+    text-align: inherit;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.arrival:nth-child(2) {
+    opacity: .95;
+    height: 84px;
+    font-size: 60px;
+}
+
+.arrival:nth-child(3) {
+    opacity: .85;
+    height: 73px;
+    font-size: 50px;
+}
+
+.arrival:nth-child(4) {
+    opacity: .5;
+    height: 64px;
+    font-size: 40px;
 }
 
 .arrival > div {
@@ -78,18 +103,6 @@ body {
     display: inline-block;
     color: #333;
     background-color: rgba(255, 165, 0, 0.8);
-}
-
-.arrival:nth-child(2) {
-    opacity: .95;
-}
-
-.arrival:nth-child(3) {
-    opacity: .85;
-}
-
-.arrival:nth-child(4) {
-    opacity: .5;
 }
 
 .title {

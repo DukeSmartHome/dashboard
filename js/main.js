@@ -86,11 +86,14 @@ $(function () {
                 var busColor = colors[routes.data[i].arrivals[j].route_id];
                 var delta = Math.round((Math.abs(new Date(arrivalTime) - new Date())) / 60000);
                 if (delta <= 5)
-                    var deltaHTML = '<div class="important">' + delta + ' min<div/>';
+                    var deltaHTML = '<div class="important">' + delta + ' min</div>';
                 else
                     var deltaHTML = delta + ' min';
 
-                var html = '<div class="arrival"><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div> in ' + deltaHTML + '</div>';
+                if (i == 0)
+                    var html = '<div class="arrival">' + deltaHTML + ' till <div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div></div>';
+                else
+                    var html = '<div class="arrival"><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div> in ' + deltaHTML + '</div>';
                 console.log(html);
                 whichWay.append(html);
             }
