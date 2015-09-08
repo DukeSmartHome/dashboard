@@ -86,8 +86,10 @@ $(function () {
                 var arrivalTime = routes.data[i].arrivals[j].arrival_at
                 var busName = names[routes.data[i].arrivals[j].route_id];
                 var busColor = colors[routes.data[i].arrivals[j].route_id];
-                var delta = Math.round((Math.abs(new Date(arrivalTime) - new Date())) / 60000);
-                if (delta <= 5)
+                var delta = Math.floor((Math.abs(new Date(arrivalTime) - new Date())) / 60000);
+                if (delta == 0)
+                    var deltaHTML = '<div class="important"> < 1 min</div>';
+                else if (delta <= 5)
                     var deltaHTML = '<div class="important">' + delta + ' min</div>';
                 else
                     var deltaHTML = delta + ' min';
