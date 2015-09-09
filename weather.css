@@ -7,7 +7,7 @@
 
 #weather {
     position: absolute;
-    top: 0;
+    top: 50px;
     right: 50px;
     width: 460px;
     margin: 0px auto;
