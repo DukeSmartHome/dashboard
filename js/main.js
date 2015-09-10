@@ -1,7 +1,7 @@
 $(function () {
     var weatherRefresh = 30000,
         clockRefresh = 30000,
-        busRefresh = 10000;
+        busRefresh = 15000;
 
     var date = new Date();
     var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -34,17 +34,17 @@ $(function () {
 
 
     /* Route Info
-            C1 = 4006684   #e2000f
-            C1 weekends = 4007026   #e2000f
-            CCX = 4005486   #f9b120
-            CCX weekends = 4007030   #bae053
+                    C1 = 4006684   #e2000f
+                    C1 weekends = 4007026   #e2000f
+                    CCX = 4005486   #f9b120
+                    CCX weekends = 4007030   #bae053
     
-            Stop Info
-            Swift -> West = 4157330
-            Swift -> East = 4151494
-            Swift @ Faber = 4173498
+                    Stop Info
+                    Swift -> West = 4157330
+                    Swift -> East = 4151494
+                    Swift @ Faber = 4173498
     
-            */
+                    */
 
     var names = {
         "4006684": "C1",
@@ -80,7 +80,10 @@ $(function () {
                 var busColor = colors[routes.data[i].arrivals[j].route_id];
                 var busID = routes.data[i].arrivals[j].vehicle_id;
                 var delta = Math.floor((Math.abs(new Date(arrivalTime) - new Date())) / 60000);
-                if (delta <= 5)
+
+                if (delta == 0)
+                    var deltaHTML = '<div class="delta important"><1 min</div>';
+                else if (delta <= 5)
                     var deltaHTML = '<div class="delta important">' + delta + ' min</div>';
                 else
                     var deltaHTML = '<div class="delta">' + delta + ' min</div>';
@@ -101,15 +104,14 @@ $(function () {
             eastDelta = [],
             wID = [],
             eID = [],
-            westHTML = [],
-            eastHTML = [],
+            westHTML = '',
+            eastHTML = '',
             oldWest = [],
             oldEast = [];
 
         for (var i = 0; i < 2; ++i) {
             var arrivalLngth = routes.data[i].arrivals.length;
             var whichDelta = i == 0 ? westDelta : eastDelta;
-            var whichWay = i == 0 ? westHTML : eastHTML;
             var whichID = i == 0 ? wID : eID;
             for (var j = 0; j < arrivalLngth && j < 4; ++j) {
                 // Process Bus Data
@@ -119,23 +121,26 @@ $(function () {
                 var busID = routes.data[i].arrivals[j].vehicle_id;
                 var delta = Math.floor((Math.abs(new Date(arrivalTime) - new Date())) / 60000);
 
-                if (delta <= 5)
+                if (delta == 0)
+                    var deltaHTML = '<div class="delta important"><1 min</div>';
+                else if (delta <= 5)
                     var deltaHTML = '<div class="delta important">' + delta + ' min</div>';
                 else
                     var deltaHTML = '<div class="delta">' + delta + ' min</div>';
-
-                if (i == 0)
-                    var html = '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated ">' + deltaHTML + ' till <div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div></div>';
+                var html = '';
+                if (i == 0) // West 
+                    westHTML += '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated ">' + deltaHTML + ' till <div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div></div>';
                 else
-                    var html = '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated "><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div> in ' + deltaHTML + '</div>';
-                whichWay.push(html);
+                    eastHTML += '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated "><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div> in ' + deltaHTML + '</div>';
                 whichDelta.push(delta);
                 whichID.push(busID);
             }
         }
 
-        for (var i = 1; i <= 4; ++i) {
+        for (var i = 1; i <= $('#west .arrival').length; ++i) {
             oldWest[i - 1] = parseInt($('#west .arrival:nth-child(' + i + ')').attr('data-time'));
+        }
+        for (var i = 1; i <= $('#east .arrival').length; ++i) {
             oldEast[i - 1] = parseInt($('#east .arrival:nth-child(' + i + ')').attr('data-time'));
         }
         updateSide('west', oldWest, westDelta, westHTML, wID);
@@ -145,14 +150,24 @@ $(function () {
 
     function updateSide(whichSide, oldArr, newArr, newHTML, ID) {
         var side = '#' + whichSide;
-        // If the top bus is gone, remove it and shift everything up
-        if ($(side + ' .arrival:nth-child(1)').attr('data-id') != ID[0]) {
-            $(side + ' .arrival:nth-child(1)').remove();
-            $(side + ' .arrivals').append(newHTML[3]);
+        // If the top bus is gone or if there are more buses, refresh everything
+        if ((newArr.length != oldArr.length)) {
+            $(side + ' .arrivals').empty();
+            $(side + ' .arrivals').append(newHTML);
+        }
+        var shouldRefresh = false;
+        // Check if any of the buses are wrong
+        for (var i = 0; i < oldArr.length; ++i) {
+            if ($(side + ' .arrival:nth-child(' + (i + 1) + ')').attr('data-id') != ID[i])
+                shouldRefresh = true;
+        }
+        if (shouldRefresh) {
+            $(side + ' .arrivals').empty();
+            $(side + ' .arrivals').append(newHTML);
         }
 
-        // Run through the entire list and update numbers
-        for (var i = 0; i < 4; ++i) {
+        // Run through the entire list and update times
+        for (var i = 0; i < newArr.length; ++i) {
             if (oldArr[i] != newArr[i]) {
                 var $this = $(side + ' .arrival:nth-child(' + (i + 1) + ')'),
                     delta = newArr[i],
@@ -160,7 +175,9 @@ $(function () {
                 $this.attr('data-time', delta);
                 $delta.fadeOut(0);
                 $delta.html(delta + ' min');
-                if (delta <= 5)
+                if (delta == 0)
+                    $this.children('.delta').html('<1 min');
+                else if (delta <= 5)
                     $this.children('.delta').addClass('important');
                 $delta.fadeIn(1000);
             }
@@ -192,6 +209,7 @@ $(function () {
     }
 
     function getWeather() {
+        $("#weather").fadeOut(0);
         $.simpleWeather({
             location: 'Durham, NC',
             woeid: '',
@@ -202,6 +220,7 @@ $(function () {
                 html = '<h2><i class="icon-' + weather.code + '"></i> ' + weather.temp + '&deg;' + weather.units.temp + '</h2>';
                 html += '<div><span id="currently">' + weather.currently + '</span>  |  wind from ' + weather.wind.direction + ' at ' + weather.wind.speed + ' ' + weather.units.speed + '</div>'
                 $("#weather").html(html);
+                $("#weather").fadeIn(1200);
             },
             error: function (error) {
                 $("#weather").html('<p>' + error + '</p>');
