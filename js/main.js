@@ -177,7 +177,7 @@ $(function () {
                 var $rem = $this.children('.reminder'),
                     name = $rem.attr('data-name'),
                     busName = $this.children('.busName').html();
-                speakAlert(name + ', the ' + busName + ' will arrive in ' + delta + ' minutes.');
+                speakAlert(name + ', your ' + busName + ' heading to ' + whichSide + 'campus will arrive in ' + delta + ' minutes.');
                 $rem.attr('data-reminder', -1);
                 $rem.attr('data-name', 'a');
                 $rem.removeClass('on');
@@ -279,7 +279,6 @@ $(function () {
         $('#ding').trigger('play');
         setTimeout(function () {
             var msg = new SpeechSynthesisUtterance();
-            msg.rate = 0.9;
             msg.text = message;
             msg.voice = speechSynthesis.getVoices().filter(function (voice) {
                 return voice.name == 'Google US English';
