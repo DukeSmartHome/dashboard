@@ -18,20 +18,44 @@
 </head>
 
 <body>
-    <div id="weather"></div>
-    <div id="clock"></div>
-    <div id="date"></div>
-    <div id="buses">
-        <div id="west">
-            <div class="title">To West</div>
-            <span class="arrivals"></span>
+    <div id="modal">
+        <div id="minutes">
+            <div>
+            </div>
         </div>
-        <div id="east">
-            <div class="title">To East</div>
-            <div class="arrivals"></div>
+        <div id="name_holder">
+            <div>
+                <input type="text" id="name" placeholder="Type your name."> <span>Press enter to set alert.</span>
+            </div>
         </div>
     </div>
-    <div id="credits">2015 Harvey Shi</div>
+    <div id="mainPage">
+        <div id="notifications">
+            <div class="notify" id="good">✓ Success</div>
+            <div class="notify" id="bad">Nope</div>
+        </div>
+
+        <div id="weather"></div>
+        <div id="clock"></div>
+        <div id="date"></div>
+        <div id="buses">
+            <div id="west">
+                <div class="title">To West</div>
+                <span class="arrivals"></span>
+            </div>
+            <div id="east">
+                <div class="title">To East</div>
+                <div class="arrivals"></div>
+            </div>
+        </div>
+        <div id="credits">2015 Harvey Shi</div>
+    </div>
+
+    <!-- Sound Effects -->
+    <audio id="ding" preload="true">
+        <source src="./ding.mp3" type="audio/mpeg">
+    </audio>
+
     <!-- JS Scripts -->
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="./js/jquery.simpleWeather.min.js"></script>

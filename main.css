@@ -75,6 +75,7 @@ body {
 }
 
 .arrival {
+    vertical-align: top;
     height: 110px;
     font-size: 80px;
     color: white;
@@ -103,6 +104,7 @@ body {
 }
 
 .busName {
+    vertical-align: top;
     padding: 6px 12px;
     border-radius: 12px;
     display: inline-block;
@@ -110,7 +112,8 @@ body {
 }
 
 .delta {
-    padding: 0;
+    vertical-align: top;
+    padding-top: 6px;
     display: inline-block;
 }
 
@@ -131,4 +134,158 @@ body {
     color: #777;
     margin-bottom: 20px;
     font-size: 26px;
+}
+
+.ti {
+    padding: 6px 15px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.reminder {
+    display: inline-block;
+    background: url('./alert.svg') no-repeat center center;
+    background-size: 40px 40px;
+    width: 60px;
+    height: 100%;
+    opacity: 0.6;
+    transition: .2s;
+}
+
+.reminder:hover {
+    opacity: 1;
+}
+
+.on {
+    opacity: 1;
+}
+
+.blurred {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+
+#modal {
+    z-index: 999;
+    position: absolute;
+    min-height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: none;
+}
+
+#minutes {
+    position: absolute;
+    top: 50%;
+    margin-top: -300px;
+    height: 600px;
+    text-align: center;
+    width: 100%;
+}
+
+#minutes span {
+    font-size: 30px;
+    color: #333;
+}
+
+#minutes div {
+    position: relative;
+    margin: 0 auto;
+    width: 550px;
+}
+
+.alertTime {
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    height: 120px;
+    padding: 0 120px;
+    font-size: 35px;
+    line-height: 120px;
+    background-color: rgba(255, 255, 255, 0.5);
+    outline: 0;
+    border: #ccc;
+    border-radius: 25px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.26);
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.alertTime:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+#name_holder {
+    position: absolute;
+    top: 50%;
+    margin-top: -150px;
+    height: 300px;
+    text-align: center;
+    width: 100%;
+    display: none;
+}
+
+#name_holder div {
+    position: relative;
+    margin: 0 auto;
+    width: 600px;
+}
+
+#name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    margin-bottom: 15px;
+    padding: 0 120px;
+    height: 120px;
+    line-height: 120px;
+    border-radius: 15px;
+    color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .5);
+    text-align: center;
+    outline: 0;
+    border: 0;
+}
+
+#name_holder span {
+    font-size: 25px;
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+}
+
+#notifications {
+    position: absolute;
+    top: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.notify {
+    margin: 0 auto;
+    padding: 6px 12px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    display: none;
+    border-radius: 6px;
+    position: relative;
+}
+
+#good {
+    border: 2px solid springgreen;
+    color: springgreen;
+    background-color: rgba(0, 255, 127, 0.2);
+}
+
+#bad {
+    border: 2px solid #D41D1D;
+    color: #D41D1D;
+    background-color: rgba(212, 29, 29, 0.1);
 }

@@ -34,17 +34,17 @@ $(function () {
 
 
     /* Route Info
-                    C1 = 4006684   #e2000f
-                    C1 weekends = 4007026   #e2000f
-                    CCX = 4005486   #f9b120
-                    CCX weekends = 4007030   #bae053
-    
-                    Stop Info
-                    Swift -> West = 4157330
-                    Swift -> East = 4151494
-                    Swift @ Faber = 4173498
-    
-                    */
+    C1 = 4006684   #e2000f
+    C1 weekends = 4007026   #e2000f
+    CCX = 4005486   #f9b120
+    CCX weekends = 4007030   #bae053
+
+    Stop Info
+    Swift -> West = 4157330
+    Swift -> East = 4151494
+    Swift @ Faber = 4173498
+
+    */
 
     var names = {
         "4006684": "C1",
@@ -64,6 +64,7 @@ $(function () {
     }
 
     var firstTime = true;
+    var reminderHTML = '<div class="reminder" data-reminder="-1" data-name="a"></div>';
 
     function newBusDisplay(routes) {
         var $west = $('#west .arrivals');
@@ -89,9 +90,9 @@ $(function () {
                     var deltaHTML = '<div class="delta">' + delta + ' min</div>';
 
                 if (i == 0)
-                    var html = '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated ">' + deltaHTML + ' till <div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div></div>';
+                    var html = '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated ">' + reminderHTML + deltaHTML + '<div class="ti"> till </div><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div></div>';
                 else
-                    var html = '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated "><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div> in ' + deltaHTML + '</div>';
+                    var html = '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated "><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div><div class="ti"> in </div>' + deltaHTML + reminderHTML + '</div>';
                 whichWay.append(html);
             }
         }
@@ -128,12 +129,15 @@ $(function () {
                 else
                     var deltaHTML = '<div class="delta">' + delta + ' min</div>';
                 var html = '';
-                if (i == 0) // West 
-                    westHTML += '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated ">' + deltaHTML + ' till <div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div></div>';
+
+                if (i == 0)
+                    westHTML += '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated ">' + reminderHTML + deltaHTML + '<div class="ti"> till </div><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div></div>';
                 else
-                    eastHTML += '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated "><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div> in ' + deltaHTML + '</div>';
+                    eastHTML += '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated "><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div><div class="ti"> in </div>' + deltaHTML + reminderHTML + '</div>';
+
                 whichDelta.push(delta);
                 whichID.push(busID);
+                0
             }
         }
 
@@ -152,8 +156,7 @@ $(function () {
         var side = '#' + whichSide;
         // If the top bus is gone or if there are more buses, refresh everything
         if ((newArr.length != oldArr.length)) {
-            $(side + ' .arrivals').empty();
-            $(side + ' .arrivals').append(newHTML);
+            refreshSide(side, newHTML);
         }
         var shouldRefresh = false;
         // Check if any of the buses are wrong
@@ -162,19 +165,30 @@ $(function () {
                 shouldRefresh = true;
         }
         if (shouldRefresh) {
-            $(side + ' .arrivals').empty();
-            $(side + ' .arrivals').append(newHTML);
+            refreshSide(side, newHTML);
         }
 
         // Run through the entire list and update times
         for (var i = 0; i < newArr.length; ++i) {
+            var $this = $(side + ' .arrival:nth-child(' + (i + 1) + ')'),
+                delta = newArr[i];
+
+            if (parseInt($this.children('.reminder').attr('data-reminder')) == delta) {
+                var $rem = $this.children('.reminder'),
+                    name = $rem.attr('data-name'),
+                    busName = $this.children('.busName').html();
+                speakAlert(name + ', the ' + busName + ' will arrive in ' + delta + ' minutes.');
+                $rem.attr('data-reminder', -1);
+                $rem.attr('data-name', 'a');
+                $rem.removeClass('on');
+            }
             if (oldArr[i] != newArr[i]) {
-                var $this = $(side + ' .arrival:nth-child(' + (i + 1) + ')'),
-                    delta = newArr[i],
-                    $delta = $this.children('.delta');
+                var $delta = $this.children('.delta');
+
                 $this.attr('data-time', delta);
                 $delta.fadeOut(0);
                 $delta.html(delta + ' min');
+
                 if (delta == 0)
                     $this.children('.delta').html('<1 min');
                 else if (delta <= 5)
@@ -184,6 +198,36 @@ $(function () {
         }
     }
 
+    function refreshSide(side, newHTML) {
+        var putBack = new Array();
+        for (var i = 1; i <= $(side + ' .arrival').length; ++i) {
+            var $this = $(side + ' .arrival:nth-child(' + i + ')');
+            if ($this.children('.reminder').hasClass('on')) {
+                var alertTemp = {
+                    "vehicle_id": $this.attr('data-id'),
+                    "name": $this.children('.reminder').attr('data-name'),
+                    "reminder": $this.children('.reminder').attr('data-reminder'),
+                };
+                putBack.push(alertTemp);
+            }
+        }
+        $(side + ' .arrivals').empty();
+        $(side + ' .arrivals').append(newHTML);
+        // Restore alerts
+        for (var i = 0; i < putBack.length; ++i) {
+            var id = putBack[i].vehicle_id;
+            for (var j = 1; j <= $(side + ' .arrival').length; ++j) {
+                var $this = $(side + ' .arrival:nth-child(' + j + ')');
+                if (id == $this.attr('data-id')) { // Match found
+                    var alertButton = $this.children('.reminder');
+                    alertButton.addClass('on');
+                    alertButton.attr('data-name', putBack[i].name);
+                    alertButton.attr('data-reminder', putBack[i].reminder);
+                    break;
+                }
+            }
+        }
+    }
 
     function getBuses() {
         var output = $.ajax({
@@ -200,7 +244,7 @@ $(function () {
                 }
             },
             beforeSend: function (xhr) {
-                xhr.setRequestHeader("X-Mashape-Authorization", "7eLsoFnNpomshsN6Xyqfr5Xyf4aOp16e11WjsnQz1nsMDnB8YI"); // Enter here your Mashape key
+                xhr.setRequestHeader("X-Mashape-Authorization", "7eLsoFnNpomshsN6Xyqfr5Xyf4aOp16e11WjsnQz1nsMDnB8YI");
             }
         });
         var t = setTimeout(function () {
@@ -215,8 +259,6 @@ $(function () {
             woeid: '',
             unit: 'f',
             success: function (weather) {
-                /* html = '<ul><li class="currently">' + weather.currently + '</li>';
-                 html += '<li>' + weather.wind.direction + ' ' + weather.wind.speed + ' ' + weather.units.speed + '</li></ul>';*/
                 html = '<h2><i class="icon-' + weather.code + '"></i> ' + weather.temp + '&deg;' + weather.units.temp + '</h2>';
                 html += '<div><span id="currently">' + weather.currently + '</span>  |  wind from ' + weather.wind.direction + ' at ' + weather.wind.speed + ' ' + weather.units.speed + '</div>'
                 $("#weather").html(html);
@@ -229,6 +271,85 @@ $(function () {
         var t = setTimeout(function () {
             getWeather();
         }, weatherRefresh);
+    }
+
+    function speakAlert(message) {
+        $('#ding').trigger('play');
+        setTimeout(function () {
+            var msg = new SpeechSynthesisUtterance();
+            msg.rate = 0.9;
+            msg.text = message;
+            speechSynthesis.speak(msg);
+        }, 500);
+    }
+
+    $(".arrivals").delegate(".reminder", "click", function () {
+        if (!$(this).hasClass('on')) {
+            var time = 0,
+                name = '',
+                $thisRem = $(this),
+                delta = parseInt($thisRem.parent().attr('data-time'));
+
+            if (delta < 5) {
+                // Cannot add alert
+                notify('Alerts for close buses are not supported.', 'bad');
+            } else {
+                // Enter Modal Mode
+                $thisRem.addClass('on');
+                updateButtons(delta);
+                $("#name").val('');
+                $("#modal").fadeIn(150);
+                $("#mainPage").addClass('blurred');
+
+                $(".alertTime").click(function () {
+                    time = $(this).attr('data-time');
+                    $("#minutes").fadeOut(0);
+                    $("#name_holder").fadeIn(300);
+                    $("#name").focus();
+                    $("#name").keyup(function (e) {
+                        if (13 == e.keyCode) {
+                            // Exit Modal 
+                            $thisRem.attr('data-reminder', time);
+                            $thisRem.attr('data-name', $("#name").val());
+                            $("#modal").fadeOut(150);
+                            $("#mainPage").removeClass('blurred');
+                            $("#name_holder").fadeOut(0);
+                            $("#minutes").fadeIn(0);
+                            notify('&#10004; Alert added successfully.', 'good');
+                        }
+                    });
+                });
+            }
+        }
+    });
+
+    function updateButtons(delta) {
+        var times = [];
+        if (delta <= 7) {
+            times = [3, 4];
+        } else if (delta > 7 && delta <= 10) {
+            times = [3, 4, 5, 6];
+        } else if (delta > 10 && delta <= 16) {
+            times = [3, 5, 6, 10];
+        } else if (delta >= 16) {
+            times = [3, 5, 10, 12];
+        }
+
+        var html = '<span>Remind me when the bus is...</span>';
+        for (var i = 0; i < times.length; ++i) {
+            html += '<button class="alertTime bounceInLeft animated" data-time="' + times[i] + '">' + times[i] + ' minutes away</button>';
+        }
+        $('#minutes div').empty();
+        $('#minutes div').append(html);
+    }
+
+    function notify(msg, which) {
+        var $which = $('#' + which);
+        $which.html(msg);
+        $which.fadeIn(300).css("display", "inline-block");
+        setTimeout(function () {
+            $which.fadeOut(300);
+        }, 1200);
     }
 
     startTime();
