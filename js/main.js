@@ -273,14 +273,19 @@ $(function () {
         }, weatherRefresh);
     }
 
+    var voices = window.speechSynthesis.getVoices();
+
     function speakAlert(message) {
         $('#ding').trigger('play');
         setTimeout(function () {
             var msg = new SpeechSynthesisUtterance();
             msg.rate = 0.9;
             msg.text = message;
+            msg.voice = speechSynthesis.getVoices().filter(function (voice) {
+                return voice.name == 'Google US English';
+            })[0];
             speechSynthesis.speak(msg);
-        }, 500);
+        }, 300);
     }
 
     $(".arrivals").delegate(".reminder", "click", function () {
@@ -325,14 +330,18 @@ $(function () {
 
     function updateButtons(delta) {
         var times = [];
-        if (delta <= 7) {
+        if (delta == 5) {
             times = [3, 4];
-        } else if (delta > 7 && delta <= 10) {
+        } else if (delta == 6) {
+            times = [3, 4, 5];
+        } else if (delta == 7) {
             times = [3, 4, 5, 6];
+        } else if (delta >= 8 && delta <= 10) {
+            times = [3, 4, 5, 7];
         } else if (delta > 10 && delta <= 16) {
-            times = [3, 5, 6, 10];
+            times = [3, 5, 6, 8];
         } else if (delta >= 16) {
-            times = [3, 5, 10, 12];
+            times = [3, 5, 10, 15];
         }
 
         var html = '<span>Remind me when the bus is...</span>';
@@ -351,7 +360,7 @@ $(function () {
             $which.fadeOut(300);
         }, 1200);
     }
-
+    
     startTime();
     getBuses();
     getWeather();
