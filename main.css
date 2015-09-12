@@ -180,6 +180,21 @@ body {
     display: none;
 }
 
+#close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 60px;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#close:hover {
+    color: red;
+}
+
 #minutes {
     position: absolute;
     top: 50%;
@@ -213,6 +228,7 @@ body {
     border-radius: 25px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.26);
     color: rgba(0, 0, 0, 0.9);
+    cursor: default;
 }
 
 .alertTime:hover {
@@ -223,14 +239,14 @@ body {
 #name_holder {
     position: absolute;
     top: 50%;
-    margin-top: -150px;
-    height: 300px;
+    margin-top: -225px;
+    height: 450px;
     text-align: center;
     width: 100%;
     display: none;
 }
 
-#name_holder div {
+#name_holder > div {
     position: relative;
     margin: 0 auto;
     width: 600px;
@@ -259,6 +275,33 @@ body {
     color: #333;
     font-family: 'Open Sans', sans-serif;
     font-style: italic;
+}
+
+#people_buttons {
+    margin-top: 15px;
+}
+
+.person {
+    cursor: default;
+    float: auto;
+    margin: 5px;
+    font-family: 'Montserrat', sans-serif;
+    height: 50px;
+    padding: 0 50px;
+    font-size: 22px;
+    line-height: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    outline: 0;
+    border: #ccc;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.26);
+    color: rgba(0, 0, 0, 0.9);
+    display: inline-block;
+}
+
+.person:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 #notifications {

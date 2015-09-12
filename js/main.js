@@ -299,7 +299,6 @@ $(function () {
                 notify('Alerts for close buses are not supported.', 'bad');
             } else {
                 // Enter Modal Mode
-                $thisRem.addClass('on');
                 updateButtons(delta);
                 $("#name").val('');
                 $("#modal").fadeIn(150);
@@ -310,15 +309,21 @@ $(function () {
                     $("#minutes").fadeOut(0);
                     $("#name_holder").fadeIn(300);
                     $("#name").focus();
+                    $('.person').click(function () {
+                        var name = $(this).html();
+                        $thisRem.attr('data-reminder', time);
+                        $thisRem.attr('data-name', name);
+                        $thisRem.addClass('on');
+                        closeModal();
+                        notify('&#10004; Alert added successfully.', 'good');
+                    });
                     $("#name").keyup(function (e) {
                         if (13 == e.keyCode) {
                             // Exit Modal 
                             $thisRem.attr('data-reminder', time);
                             $thisRem.attr('data-name', $("#name").val());
-                            $("#modal").fadeOut(150);
-                            $("#mainPage").removeClass('blurred');
-                            $("#name_holder").fadeOut(0);
-                            $("#minutes").fadeIn(0);
+                            $thisRem.addClass('on');
+                            closeModal();
                             notify('&#10004; Alert added successfully.', 'good');
                         }
                     });
@@ -326,6 +331,17 @@ $(function () {
             }
         }
     });
+
+    $('#close').click(function () {
+        closeModal();
+    });
+
+    function closeModal() {
+        $("#modal").fadeOut(150);
+        $("#mainPage").removeClass('blurred');
+        $("#name_holder").fadeOut(0);
+        $("#minutes").fadeIn(0);
+    }
 
     function updateButtons(delta) {
         var times = [];
@@ -345,7 +361,7 @@ $(function () {
 
         var html = '<span>Remind me when the bus is...</span>';
         for (var i = 0; i < times.length; ++i) {
-            html += '<button class="alertTime bounceInLeft animated" data-time="' + times[i] + '">' + times[i] + ' minutes away</button>';
+            html += '<button class="alertTime" data-time="' + times[i] + '">' + times[i] + ' minutes away</button>';
         }
         $('#minutes div').empty();
         $('#minutes div').append(html);
@@ -359,7 +375,31 @@ $(function () {
             $which.fadeOut(300);
         }, 1200);
     }
-    
+
+    function shuffle(array) {
+        var currentIndex = array.length,
+            temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+
+        return array;
+    }
+    var people = ["Harvey", "Lauren", "Lavanya", "Noah", "Owen", "Stephanie", "Suyash", "Tara", "Tierney", "Victoria"];
+    // Initialize names
+    for (var i = 0; i < people.length; ++i) {
+        $("#people_buttons").append('<div class="person">' + people[i] + '</div>');
+    }
     startTime();
     getBuses();
     getWeather();
