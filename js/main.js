@@ -255,36 +255,38 @@ $(function () {
     function getWeather() {
         $("#weather").fadeOut(0);
         $.simpleWeather({
-            location: 'Durham, NC',
-            woeid: '',
+            woeid: '2394734',
             unit: 'f',
             success: function (weather) {
                 html = '<h2><i class="icon-' + weather.code + '"></i> ' + weather.temp + '&deg;' + weather.units.temp + '</h2>';
-                html += '<div><span id="currently">' + weather.currently + '</span>  |  wind from ' + weather.wind.direction + ' at ' + weather.wind.speed + ' ' + weather.units.speed + '</div>'
+                html += '<div>Wind from ' + weather.wind.direction + ' at ' + weather.wind.speed + ' mph<br><span id="currently">' + weather.currently + '</span></div>'
                 $("#weather").html(html);
                 $("#weather").fadeIn(1200);
             },
             error: function (error) {
-                $("#weather").html('<p>' + error + '</p>');
+                console.log("error");
             }
         });
         var t = setTimeout(function () {
             getWeather();
         }, weatherRefresh);
     }
-
-    var voices = window.speechSynthesis.getVoices();
+    if ('speechSynthesis' in window) {
+        var voices = window.speechSynthesis.getVoices();
+    }
 
     function speakAlert(message) {
         $('#ding').trigger('play');
-        setTimeout(function () {
-            var msg = new SpeechSynthesisUtterance();
-            msg.text = message;
-            msg.voice = speechSynthesis.getVoices().filter(function (voice) {
-                return voice.name == 'Google US English';
-            })[0];
-            speechSynthesis.speak(msg);
-        }, 300);
+        if ('speechSynthesis' in window) {
+            setTimeout(function () {
+                var msg = new SpeechSynthesisUtterance();
+                msg.text = message;
+                msg.voice = speechSynthesis.getVoices().filter(function (voice) {
+                    return voice.name == 'Google US English';
+                })[0];
+                speechSynthesis.speak(msg);
+            }, 200);
+        }
     }
 
     $(".arrivals").delegate(".reminder", "click", function () {
@@ -301,8 +303,8 @@ $(function () {
                 // Enter Modal Mode
                 updateButtons(delta);
                 $("#name").val('');
-                $("#modal").fadeIn(150);
-                $("#mainPage").addClass('blurred');
+                $("#modal").fadeIn(350);
+                $("#mainPage").fadeOut(0);
 
                 $(".alertTime").click(function () {
                     time = $(this).attr('data-time');
@@ -337,8 +339,8 @@ $(function () {
     });
 
     function closeModal() {
-        $("#modal").fadeOut(150);
-        $("#mainPage").removeClass('blurred');
+        $("#modal").fadeOut(0);
+        $("#mainPage").fadeIn(500);
         $("#name_holder").fadeOut(0);
         $("#minutes").fadeIn(0);
     }
@@ -373,7 +375,7 @@ $(function () {
         $which.fadeIn(300).css("display", "inline-block");
         setTimeout(function () {
             $which.fadeOut(300);
-        }, 1200);
+        }, 2000);
     }
 
     function shuffle(array) {

@@ -7,9 +7,8 @@
 
 #weather {
     position: absolute;
-    top: 10px;
-    right: 50px;
-    width: 460px;
+    top: 50px;
+    right: 70px;
     margin: 0px auto;
     text-align: right;
     overflow: hidden;
@@ -33,17 +32,17 @@ i {
     font-weight: 400;
     text-align: right;
     text-shadow: 2px 1px 3px rgba(0, 0, 0, 0.3);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 #weather div {
+    width: 300px;
     margin-top: 0;
     padding: 10px 15px;
-    width: 100%;
     display: inline-block;
     color: white;
     font-size: 24px;
-   font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Slab', serif;
     box-sizing: border-box;
     font-weight: 400;
     border-top: 2px solid rgba(255, 255, 255, 0.6);

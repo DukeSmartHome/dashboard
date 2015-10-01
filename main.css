@@ -13,14 +13,14 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto Slab', serif;
 }
 
 #clock {
     font-size: 320px;
     color: white;
     text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
-    margin-top: -10px;
+    margin-top: -50px;
     text-align: left;
     padding-left: 50px;
 }
@@ -30,7 +30,7 @@ body {
 }
 
 #date {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Arvo', serif;
     font-style: italic;
     font-size: 45px;
     margin-top: -60px;
@@ -53,7 +53,7 @@ body {
 #buses {
     width: 100%;
     margin: 0 auto;
-    font-family: 'Montserrat', sans-serif;
+   font-family: 'Roboto Slab', serif;
 }
 
 #west,
@@ -105,7 +105,7 @@ body {
 
 .busName {
     vertical-align: top;
-    padding: 6px 12px;
+    padding: 0 .3em;
     border-radius: 12px;
     display: inline-block;
     font-weight: 700;
@@ -118,7 +118,7 @@ body {
 }
 
 .important {
-    padding: 6px 12px;
+    padding: 0 .3em;
     border-radius: 12px;
     display: inline-block;
     color: #333;
@@ -127,7 +127,7 @@ body {
 }
 
 .title {
-    padding: 4px 8px;
+    padding: 4px 15px;
     border-radius: 8px;
     display: inline-block;
     background-color: rgba(255, 255, 255, 0.8);
@@ -185,14 +185,14 @@ body {
     top: 10px;
     right: 20px;
     font-size: 60px;
-    color: white;
+    color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
     transition: .3s;
-    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #close:hover {
-    color: red;
+    color: rgba(255, 0, 0, 0.8);
 }
 
 #minutes {
@@ -217,7 +217,7 @@ body {
 
 .alertTime {
     margin-top: 10px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Slab', serif;
     height: 120px;
     padding: 0 120px;
     font-size: 35px;
@@ -253,7 +253,7 @@ body {
 }
 
 #name {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Slab', serif;
     font-size: 35px;
     margin-bottom: 15px;
     padding: 0 120px;
@@ -273,7 +273,7 @@ body {
 #name_holder span {
     font-size: 25px;
     color: #333;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Arvo', serif;
     font-style: italic;
 }
 
@@ -285,7 +285,7 @@ body {
     cursor: default;
     float: auto;
     margin: 5px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Slab', serif;
     height: 50px;
     padding: 0 50px;
     font-size: 22px;
@@ -315,7 +315,7 @@ body {
     margin: 0 auto;
     padding: 6px 12px;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Slab', serif;
     display: none;
     border-radius: 6px;
     position: relative;
