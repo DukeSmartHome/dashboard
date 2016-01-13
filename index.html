@@ -2,67 +2,68 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Smarthome Dashboard</title>
+	<meta charset="utf-8">
+	<title>Smarthome Dashboard</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="../favicon-16x16.png" sizes="16x16" />
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="../favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="../favicon-16x16.png" sizes="16x16" />
 
-    <!-- Stylesheets & Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Arvo:400,400italic' rel='stylesheet' type='text/css'>
-    
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="stylesheet" type="text/css" href="weather.css">
-    <link rel="stylesheet" type="text/css" href="animate.css">
+	<!-- Stylesheets & Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Arvo:400,400italic' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="weather.css">
+	<link rel="stylesheet" type="text/css" href="animate.css">
 </head>
 
 <body>
-    <div id="modal">
-        <div id="close">&#215;</div>
-        <div id="minutes">
-            <div>
-            </div>
-        </div>
-        <div id="name_holder">
-            <div>
-                <input type="text" id="name" placeholder="Type your name."> <span>Press enter or click a button below to set alert.</span>
-                <div id="people_buttons"></div>
-            </div>
-        </div>
-    </div>
-    <div id="mainPage">
-        <div id="notifications">
-            <div class="notify" id="good"></div>
-            <div class="notify" id="bad"></div>
-        </div>
+	<div id="modal">
+		<div id="close">&#215;</div>
+		<div id="minutes">
+			<div>
+			</div>
+		</div>
+		<div id="name_holder">
+			<div>
+				<input type="text" id="name" placeholder="Type your name."> <span>Press enter or click a button below to set alert.</span>
+				<div id="people_buttons"></div>
+			</div>
+		</div>
+	</div>
+	<div id="mainPage">
+		<div id="notifications">
+			<div class="notify" id="good"></div>
+			<div class="notify" id="bad"></div>
+		</div>
+		<div id="weather"></div>
+		<div id="clock"></div>
+		<div id="date"></div>
+		<div id="buses">
+			<div id="west">
+				<div class="title">To West</div>
+				<span class="arrivals"></span>
+			</div>
+			<div id="east">
+				<div class="title">To East</div>
+				<div class="arrivals"></div>
+			</div>
+		</div>
+		<div id="credits">2015 Harvey Shi</div>
+	</div>
 
-        <div id="weather"></div>
-        <div id="clock"></div>
-        <div id="date"></div>
-        <div id="buses">
-            <div id="west">
-                <div class="title">To West</div>
-                <span class="arrivals"></span>
-            </div>
-            <div id="east">
-                <div class="title">To East</div>
-                <div class="arrivals"></div>
-            </div>
-        </div>
-        <div id="credits">2015 Harvey Shi</div>
-    </div>
+	<!-- Sound Effects -->
+	<audio id="ding" preload="true">
+		<source src="./ding.mp3" type="audio/mpeg">
+	</audio>
 
-    <!-- Sound Effects -->
-    <audio id="ding" preload="true">
-        <source src="./ding.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- JS Scripts -->
-    <script type="text/javascript" src="../js/jquery.js"></script>
-    <script type="text/javascript" src="./js/jquery.simpleWeather.min.js"></script>
-    <script type="text/javascript" src="./js/main.js"></script>
+	<!-- JS Scripts -->
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery.simpleWeather.min.js"></script>
+	<script type="text/javascript" src="./js/Chart.min.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript" src="./js/charts.js"></script>
 </body>
 
 </html>

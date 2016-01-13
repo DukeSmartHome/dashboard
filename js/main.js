@@ -1,7 +1,7 @@
 $(function () {
     var weatherRefresh = 30000,
         clockRefresh = 30000,
-        busRefresh = 15000;
+        busRefresh = 8000;
 
     var date = new Date();
     var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -47,20 +47,20 @@ $(function () {
     */
 
     var names = {
-        "4006684": "C1",
-        "4007026": "C1",
+        "4007588": "C1", // C1
+        "4007592": "C1", // C1 Weekends
         "4005486": "CCX",
-        "4007030": "CCX",
-        "4007024": "CSW",
-        "4007028": "C3"
+        "4007596": "CCX",
+        "4007590": "CSW",
+        "4007594": "C3"
     }
     var colors = {
-        "4006684": "rgba(226,0,15,",
-        "4007026": "rgba(226,0,15,",
+        "4007588": "rgba(226,0,15,",
+        "4007592": "rgba(226,0,15,",
         "4005486": "rgba(249,177,32,",
-        "4007030": "rgba(186,224,83,",
-        "4007024": "rgba(0,98,155,",
-        "4007028": "rgba(1,130,132,"
+        "4007596": "rgba(186,224,83,",
+        "4007590": "rgba(0,98,155,",
+        "4007594": "rgba(1,130,132,"
     }
 
     var firstTime = true;
@@ -73,14 +73,14 @@ $(function () {
         $east.empty();
         for (var i = 0; i < 2; ++i) {
             var arrivalLngth = routes.data[i].arrivals.length;
-            var whichWay = i == 0 ? $west : $east;
+            var whichWay = i == 1 ? $west : $east;
             for (var j = 0; j < arrivalLngth && j < 4; ++j) {
                 // Process Bus Data
                 var arrivalTime = routes.data[i].arrivals[j].arrival_at
                 var busName = names[routes.data[i].arrivals[j].route_id];
                 var busColor = colors[routes.data[i].arrivals[j].route_id];
                 var busID = routes.data[i].arrivals[j].vehicle_id;
-                var delta = Math.floor((Math.abs(new Date(arrivalTime) - new Date())) / 60000);
+                var delta = Math.floor((Math.abs(new Date(arrivalTime) - new Date())) / 60000)-1;
 
                 if (delta == 0)
                     var deltaHTML = '<div class="delta important"><1 min</div>';
@@ -89,7 +89,7 @@ $(function () {
                 else
                     var deltaHTML = '<div class="delta">' + delta + ' min</div>';
 
-                if (i == 0)
+                if (i == 1)
                     var html = '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated ">' + reminderHTML + deltaHTML + '<div class="ti"> till </div><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div></div>';
                 else
                     var html = '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated "><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div><div class="ti"> in </div>' + deltaHTML + reminderHTML + '</div>';
@@ -112,15 +112,15 @@ $(function () {
 
         for (var i = 0; i < 2; ++i) {
             var arrivalLngth = routes.data[i].arrivals.length;
-            var whichDelta = i == 0 ? westDelta : eastDelta;
-            var whichID = i == 0 ? wID : eID;
+            var whichDelta = i == 1 ? westDelta : eastDelta;
+            var whichID = i == 1 ? wID : eID;
             for (var j = 0; j < arrivalLngth && j < 4; ++j) {
                 // Process Bus Data
                 var arrivalTime = routes.data[i].arrivals[j].arrival_at;
                 var busName = names[routes.data[i].arrivals[j].route_id];
                 var busColor = colors[routes.data[i].arrivals[j].route_id];
                 var busID = routes.data[i].arrivals[j].vehicle_id;
-                var delta = Math.floor((Math.abs(new Date(arrivalTime) - new Date())) / 60000);
+                var delta = Math.floor((Math.abs(new Date(arrivalTime) - new Date())) / 60000)-1;
 
                 if (delta == 0)
                     var deltaHTML = '<div class="delta important"><1 min</div>';
@@ -130,7 +130,7 @@ $(function () {
                     var deltaHTML = '<div class="delta">' + delta + ' min</div>';
                 var html = '';
 
-                if (i == 0)
+                if (i == 1)
                     westHTML += '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated ">' + reminderHTML + deltaHTML + '<div class="ti"> till </div><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div></div>';
                 else
                     eastHTML += '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated "><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div><div class="ti"> in </div>' + deltaHTML + reminderHTML + '</div>';
@@ -231,11 +231,12 @@ $(function () {
 
     function getBuses() {
         var output = $.ajax({
-            url: "https://transloc-api-1-2.p.mashape.com/arrival-estimates.json?agencies=176&callback=call&routes=4006684%2C4007024%2C4007028%2C4007026%2C4005486%2C4007030&stops=4157330%2C4151494%2C4173498",
+            url: "https://transloc-api-1-2.p.mashape.com/arrival-estimates.json?agencies=176&callback=call&routes=4007588,4007588,4007592,4005486,4007596,4007590,4007594&stops=4188202,4188200", //c3 stop 4189296
             type: 'GET',
             data: {},
             dataType: 'json',
             success: function (routes) {
+				console.log(routes);
                 if (firstTime) {
                     newBusDisplay(routes);
                     firstTime = false;
