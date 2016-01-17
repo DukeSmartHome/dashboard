@@ -80,7 +80,7 @@ $(function () {
                 var busName = names[routes.data[i].arrivals[j].route_id];
                 var busColor = colors[routes.data[i].arrivals[j].route_id];
                 var busID = routes.data[i].arrivals[j].vehicle_id;
-                var delta = Math.floor((Math.abs(new Date(arrivalTime) - new Date())) / 60000)-1;
+                var delta = Math.floor((Math.abs(new Date(arrivalTime) - new Date())) / 60000);
 
                 if (delta == 0)
                     var deltaHTML = '<div class="delta important"><1 min</div>';
@@ -120,7 +120,7 @@ $(function () {
                 var busName = names[routes.data[i].arrivals[j].route_id];
                 var busColor = colors[routes.data[i].arrivals[j].route_id];
                 var busID = routes.data[i].arrivals[j].vehicle_id;
-                var delta = Math.floor((Math.abs(new Date(arrivalTime) - new Date())) / 60000)-1;
+                var delta = Math.floor((Math.abs(new Date(arrivalTime) - new Date())) / 60000);
 
                 if (delta == 0)
                     var deltaHTML = '<div class="delta important"><1 min</div>';
