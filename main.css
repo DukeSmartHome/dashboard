@@ -13,7 +13,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 #clock {
@@ -44,7 +44,7 @@ font-family: 'Roboto Slab', serif;
 #credits {
     position: fixed;
     bottom: 10px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.6);
     font-size: 14px;
     width: 100%;
     text-align: center;
@@ -53,7 +53,7 @@ font-family: 'Roboto Slab', serif;
 #buses {
     width: 100%;
     margin: 0 auto;
-   font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 #west,
@@ -246,7 +246,7 @@ font-family: 'Roboto Slab', serif;
     display: none;
 }
 
-#name_holder > div {
+#name_holder> div {
     position: relative;
     margin: 0 auto;
     width: 600px;

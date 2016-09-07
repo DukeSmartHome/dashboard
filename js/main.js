@@ -4,6 +4,7 @@ $(function () {
         busRefresh = 8000;
 
     var date = new Date();
+    var people = ["Harvey", "Lauren", "Lavanya", "Noah", "Owen", "Stephanie", "Suyash", "Tara", "Tierney", "Victoria"];
     var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var month = monthNames[date.getMonth()];
     var day = date.getDate();
@@ -34,33 +35,36 @@ $(function () {
 
 
     /* Route Info
-    C1 = 4006684   #e2000f
-    C1 weekends = 4007026   #e2000f
+    C1 = 4008330   #e2000f
+    C1 Weekends = 4007592   #e2000f
     CCX = 4005486   #f9b120
-    CCX weekends = 4007030   #bae053
+    CCX Weekends = 4008336   #bae053
 
     Stop Info
     Swift -> West = 4157330
     Swift -> East = 4151494
     Swift @ Faber = 4173498
-
     */
 
     var names = {
-        "4007588": "C1", // C1
+        "4008330": "C1", // C1
         "4007592": "C1", // C1 Weekends
         "4005486": "CCX",
-        "4007596": "CCX",
-        "4007590": "CSW",
-        "4007594": "C3"
+        "4008336": "CCX", // CCX Weekends
+        "4008332": "CSW",
+        "4008334": "C3",
+        "4008340": "C3",
+        "4008342": "C2"
     }
     var colors = {
-        "4007588": "rgba(226,0,15,",
+        "4008330": "rgba(226,0,15,",
         "4007592": "rgba(226,0,15,",
         "4005486": "rgba(249,177,32,",
-        "4007596": "rgba(186,224,83,",
-        "4007590": "rgba(0,98,155,",
-        "4007594": "rgba(1,130,132,"
+        "4008336": "rgba(186,224,83,",
+        "4008332": "rgba(0,98,155,",
+        "4008334": "rgba(1,130,132,",
+        "4008340": "rgba(1,130,132,",
+        "4008342": "rgba(232,240,0,"
     }
 
     var firstTime = true;
@@ -229,14 +233,14 @@ $(function () {
         }
     }
 
+
     function getBuses() {
         var output = $.ajax({
-            url: "https://transloc-api-1-2.p.mashape.com/arrival-estimates.json?agencies=176&callback=call&routes=4007588,4007588,4007592,4005486,4007596,4007590,4007594&stops=4188202,4188200", //c3 stop 4189296
+            url: "https://transloc-api-1-2.p.mashape.com/arrival-estimates.json?agencies=176&callback=call&routes=4008330,4007588,4007592,4005486,4008336,4008332,4008334,4008340,4008342&stops=4188202,4188200", //c3 stop 4189296
             type: 'GET',
             data: {},
             dataType: 'json',
             success: function (routes) {
-				console.log(routes);
                 if (firstTime) {
                     newBusDisplay(routes);
                     firstTime = false;
@@ -398,7 +402,7 @@ $(function () {
 
         return array;
     }
-    var people = ["Harvey", "Lauren", "Lavanya", "Noah", "Owen", "Stephanie", "Suyash", "Tara", "Tierney", "Victoria"];
+
     // Initialize names
     for (var i = 0; i < people.length; ++i) {
         $("#people_buttons").append('<div class="person">' + people[i] + '</div>');
