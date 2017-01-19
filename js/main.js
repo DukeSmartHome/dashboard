@@ -1,14 +1,28 @@
 $(function () {
+    // Weather variables
     var weatherRefresh = 30000,
         clockRefresh = 30000,
         busRefresh = 8000;
 
-    var date = new Date();
-    var people = ["Harvey", "Lauren", "Lavanya", "Noah", "Owen", "Stephanie", "Suyash", "Tara", "Tierney", "Victoria"];
-    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    var month = monthNames[date.getMonth()];
-    var day = date.getDate();
-    var year = date.getFullYear();
+    // Other variables
+    var date = new Date(),
+        people = ["Alex", "Carolyn", "Derek", "Emilia", "Eva", "Sara", "Shomik", "Solomon", "Tracy"],
+        monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        month = monthNames[date.getMonth()],
+        day = date.getDate(),
+        year = date.getFullYear(),
+        voice;
+
+    // load voice
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.onvoiceschanged = function () {
+            voices = window.speechSynthesis.getVoices();
+            voice = voices.filter(function (voice) {
+                return voice.name == 'Google UK English Male';
+            })[0];
+        };
+    }
+    speakAlert('Welcome to the Smart Home Dashboard.', false);
 
     $('#date').html(month + " " + day + ", " + year);
 
@@ -181,7 +195,7 @@ $(function () {
                 var $rem = $this.children('.reminder'),
                     name = $rem.attr('data-name'),
                     busName = $this.children('.busName').html();
-                speakAlert(name + ', your ' + busName + ' heading to ' + whichSide + 'campus will arrive in ' + delta + ' minutes.');
+                speakAlert(name + ', your ' + busName + ' heading to ' + whichSide + 'campus will arrive in ' + delta + ' minutes.', true);
                 $rem.attr('data-reminder', -1);
                 $rem.attr('data-name', 'a');
                 $rem.removeClass('on');
@@ -276,19 +290,16 @@ $(function () {
             getWeather();
         }, weatherRefresh);
     }
-    if ('speechSynthesis' in window) {
-        var voices = window.speechSynthesis.getVoices();
-    }
 
-    function speakAlert(message) {
-        $('#ding').trigger('play');
+    function speakAlert(message, dingOrNot) {
+        if(dingOrNot)
+            $('#ding').trigger('play');
+        
         if ('speechSynthesis' in window) {
             setTimeout(function () {
                 var msg = new SpeechSynthesisUtterance();
                 msg.text = message;
-                msg.voice = speechSynthesis.getVoices().filter(function (voice) {
-                    return voice.name == 'Google US English';
-                })[0];
+                msg.voice = voice;
                 speechSynthesis.speak(msg);
             }, 200);
         }
