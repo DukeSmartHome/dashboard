@@ -6,7 +6,7 @@ $(function () {
 
     // Other variables
     var date = new Date(),
-        people = ["Alex", "Carolyn", "Derek", "Emilia", "Eva", "Sara", "Shomik", "Solomon", "Tracy"],
+        people = ["Ryan", "Jana", "Yutao", "Anuj", "Harsh", "Candice", "Andie", "Rahul", "Elliott", "Jason"],
         monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
         month = monthNames[date.getMonth()],
         day = date.getDate(),
@@ -22,7 +22,7 @@ $(function () {
             })[0];
         };
     }
-    speakAlert('Welcome to the Smart Home Dashboard.', false);
+    speakAlert('Welcome Smart Homers!', false);
 
     $('#date').html(month + " " + day + ", " + year);
 
