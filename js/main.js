@@ -250,7 +250,8 @@ $(function () {
 
     function getBuses() {
         var output = $.ajax({
-            url: "https://transloc-api-1-2.p.mashape.com/arrival-estimates.json?agencies=176&callback=call&routes=4008330,4007588,4007592,4005486,4008336,4008332,4008334,4008340,4008342&stops=4188202,4188200", //c3 stop 4189296
+            url: "https://transloc-api-1-2.p.rapidapi.com/arrival-estimates.json?agencies=176&routes=4016572%2C4016096%2C4008330&stops=4258582%2C4188202%2C4188200&callback=call",
+            //url: "https://transloc-api-1-2.p.mashape.com/arrival-estimates.json?agencies=176&callback=call&routes=4008330,4007588,4007592,4005486,4008336,4008332,4008334,4008340,4008342&stops=4188202,4188200", //c3 stop 4189296
             type: 'GET',
             data: {},
             dataType: 'json',
