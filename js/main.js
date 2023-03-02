@@ -22,7 +22,7 @@ $(function () {
             })[0];
         };
     }
-    speakAlert('Welcome Smart Homers!', false);
+    speakAlert('Welcome Smart Homies!', false);
 
     $('#date').html(month + " " + day + ", " + year);
 
@@ -62,7 +62,7 @@ $(function () {
 
     var names = {
         "4008330": "C1", // C1
-        "4007592": "C1", // C1 Weekends
+        //"4007592": "C1", // C1 Weekends
         //"4005486": "CCX",
         //"4008336": "CCX", // CCX Weekends
         "4008332": "CSW",
@@ -70,6 +70,7 @@ $(function () {
         //"4008340": "C3",
         //"4008342": "C2",
         "4016096": "SWS",
+        "4016572": "CSWIFT",
     }
     var colors = {
         "4008330": "rgba(226,0,15,",
@@ -252,7 +253,7 @@ $(function () {
     function getBuses() {
         var output = $.ajax({
             url: "https://transloc-api-1-2.p.rapidapi.com/arrival-estimates.json?agencies=176&routes=4016572%2C4016096%2C4008330&stops=4258582%2C4188202%2C4188200&callback=call",
-            //url: "https://transloc-api-1-2.p.mashape.com/arrival-estimates.json?agencies=176&callback=call&routes=4008330,4007588,4007592,4005486,4008336,4008332,4008334,4008340,4008342&stops=4188202,4188200", //c3 stop 4189296
+            //deprecated url: "https://transloc-api-1-2.p.mashape.com/arrival-estimates.json?agencies=176&callback=call&routes=4008330,4007588,4007592,4005486,4008336,4008332,4008334,4008340,4008342&stops=4188202,4188200", //c3 stop 4189296
             type: 'GET',
             data: {},
             dataType: 'json',
