@@ -93,7 +93,7 @@ $(function () {
         $east.empty();
         
         // left side (to West), then right side (to East), then swift (west)
-        for (var i = 0; i < 2; ++i) {
+        for (var i = 0; i <= 2; ++i) {
             var arrivalLngth = routes.data[i].arrivals.length;
             //kelsey is updating this, trying to make swift also count as west
             var whichWay = i % 2 == 1 ? $west : $east;
