@@ -6,7 +6,7 @@ $(function () {
 
     // Other variables
     var date = new Date(),
-        people = ["Ryan", "Jana", "Yutao", "Anuj", "Harsh", "Candice", "Andie", "Rahul", "Elliott", "Jason"],
+        people = ["Andrew", "Aryan", "Bryce", "Eric", "Jason", "Jerone", "Kelsey", "Molly", "Sarah", "Surya"],
         monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
         month = monthNames[date.getMonth()],
         day = date.getDate(),
