@@ -92,10 +92,11 @@ $(function () {
         $west.empty();
         $east.empty();
         
-        // left side (to West), then right side (to East)
+        // left side (to West), then right side (to East), then swift (west)
         for (var i = 0; i < 2; ++i) {
             var arrivalLngth = routes.data[i].arrivals.length;
-            var whichWay = i == 1 ? $west : $east;
+            //kelsey is updating this, trying to make swift also count as west
+            var whichWay = i % 2 == 1 ? $west : $east;
             
             // for each bus, max of 4
             for (var j = 0; j < arrivalLngth && j < 4; ++j) {
@@ -114,7 +115,7 @@ $(function () {
                     var deltaHTML = '<div class="delta">' + delta + ' min</div>';
 
                 // output based on left or right (west or east)
-                if (i == 1)
+                if (i % 2 == 1)
                     var html = '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated ">' + reminderHTML + deltaHTML + '<div class="ti"> till </div><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div></div>';
                 else
                     var html = '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated "><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div><div class="ti"> in </div>' + deltaHTML + reminderHTML + '</div>';
