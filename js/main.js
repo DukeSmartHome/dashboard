@@ -48,39 +48,24 @@ $(function () {
     }
 
 
-    /* Route Info
-    C1 = 4008330   #e2000f
-    C1 Weekends = 4007592   #e2000f
-    CCX = 4005486   #f9b120
-    CCX Weekends = 4008336   #bae053
-
-    Stop Info
+    /* Stop Info
     Swift -> West = 4157330
     Swift -> East = 4151494
     Swift @ Faber = 4173498
     */
 
     var names = {
-        "4008330": "C1", // C1
-        //"4007592": "C1", // C1 Weekends
-        //"4005486": "CCX",
-        //"4008336": "CCX", // CCX Weekends
-        "4008332": "CSW",
-        //"4008334": "C3",
-        //"4008340": "C3",
-        //"4008342": "C2",
+        "4008330": "C1",
+        "4008332": "CSW", //I think this doesn't exist anymore, but just in case
         "4016096": "SWS",
         "4016572": "CSWIFT",
     }
+
     var colors = {
         "4008330": "rgba(226,0,15,",
-        "4007592": "rgba(226,0,15,",
-        "4005486": "rgba(249,177,32,",
-        "4008336": "rgba(186,224,83,",
         "4008332": "rgba(0,98,155,",
-        "4008334": "rgba(1,130,132,",
-        "4008340": "rgba(1,130,132,",
-        "4008342": "rgba(232,240,0,"
+        "4016096": "rgba(0,98,155,",
+        "4016572": "rgba(0,98,155,",
     }
 
     var firstTime = true;
@@ -92,11 +77,11 @@ $(function () {
         $west.empty();
         $east.empty();
         
-        // left side (to West), then right side (to East), then swift (west)
+        // left side (C1 to West), then right side (C1 to East), then swift (west)
         for (var i = 0; i <= 2; ++i) {
             var arrivalLngth = routes.data[i].arrivals.length;
-            //kelsey is updating this, trying to make swift also count as west
-            var whichWay = i != 1 ? $east : $west;
+            //split between east and west
+            var whichWay = i == 1 ? $east : $west;
             
             // for each bus, max of 4
             for (var j = 0; j < arrivalLngth && j < 4; ++j) {
@@ -136,10 +121,10 @@ $(function () {
             oldWest = [],
             oldEast = [];
 
-        for (var i = 0; i < 2; ++i) {
+        for (var i = 0; i <= 2; ++i) {
             var arrivalLngth = routes.data[i].arrivals.length;
-            var whichDelta = i != 1 ? eastDelta : westDelta;
-            var whichID = i == 1 ? wID : eID;
+            var whichDelta = i == 1 ? eastDelta : westDelta;
+            var whichID = i == 1 ? eID : wID;
             for (var j = 0; j < arrivalLngth && j < 4; ++j) {
                 // Process Bus Data
                 var arrivalTime = routes.data[i].arrivals[j].arrival_at;
@@ -156,7 +141,7 @@ $(function () {
                     var deltaHTML = '<div class="delta">' + delta + ' min</div>';
                 var html = '';
 
-                if (i != 1)
+                if (i == 1)
                     eastHTML += '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated "><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div><div class="ti"> in </div>' + deltaHTML + reminderHTML + '</div>';
                 else
                     westHTML += '<div data-time="' + delta + '" data-id="' + busID + '" class="arrival fadeInUp animated ">' + reminderHTML + deltaHTML + '<div class="ti"> till </div><div style="background-color:' + busColor + '0.6);" class="busName">' + busName + '</div></div>';
@@ -168,10 +153,10 @@ $(function () {
             }
         }
 
-        for (var i = 1; i <= $('#west .arrival').length; ++i) {
+        for (var i = 1; i <= Math.max($('#west .arrival').length, 4); ++i) {
             oldWest[i - 1] = parseInt($('#west .arrival:nth-child(' + i + ')').attr('data-time'));
         }
-        for (var i = 1; i <= $('#east .arrival').length; ++i) {
+        for (var i = 1; i <= Math.max($('#east .arrival').length, 4); ++i) {
             oldEast[i - 1] = parseInt($('#east .arrival:nth-child(' + i + ')').attr('data-time'));
         }
         updateSide('west', oldWest, westDelta, westHTML, wID);
